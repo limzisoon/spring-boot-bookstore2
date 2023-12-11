@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "64237f37-28b9-4aa0-815f-3e14ee9df6b0",
+		"name": "bookstore2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12839116"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsaW15b25nZW4iLCJpYXQiOjE3MDIyNjI3MjAsImV4cCI6MTcwMjM0OTEyMH0.6dD5rC7iNhMNE6WP6H_NDsKf__CyeKai5g-zLc5MqIc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"limyonghui12\",\r\n    \"password\":\"limyonghui12\",\r\n    \"email\":\"limyonghui12@hotmail.com\",\r\n    \"role\":[\"admin\",\"mod\",\"user\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"limyonghui12\",\r\n    \"password\":\"limyonghui12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "find all books",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/book/books"
+			},
+			"response": []
+		},
+		{
+			"name": "add Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\":\"00005\",\r\n    \"title\":\"The Hobbit\",\r\n    \"authors\":[\"Tolkien\"],\r\n    \"year\":1937,\r\n    \"price\":50.50,\r\n    \"genre\":\"Fantasy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/book/addBook"
+			},
+			"response": []
+		},
+		{
+			"name": "update Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\":\"00005\",\r\n    \"title\":\"The Hobbit\",\r\n    \"authors\":[\"Tolkien\",\"Agatha Christie\"],\r\n    \"year\":1940,\r\n    \"price\":50.50,\r\n    \"genre\":\"Fantasy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/book/updateBook/00005"
+			},
+			"response": []
+		},
+		{
+			"name": "delete book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/book/book/00005"
+			},
+			"response": []
+		},
+		{
+			"name": "find books by title and author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"The Young Guard\",\r\n    \"author\":\"Alexander\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/books"
+			},
+			"response": []
+		}
+	]
+}
