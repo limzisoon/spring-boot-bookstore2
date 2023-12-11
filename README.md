@@ -1,2 +1,2 @@
 # spring-boot-bookstore2
-xxx
+bookstore project (backend : Springboot + postgres DB) with Spring Security JWT
